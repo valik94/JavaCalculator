@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">YWCA_F22_Week1</string>
+    <string name="title1">Week 1 YWCA Program</string>
+    <string name="calculator_app">Calculator App</string>
+    <string name="enter_first_number">Enter First Number</string>
+    <string name="enter_second_number">Enter Second Number</string>
+    <string name="sub">-</string>
+    <string name="multi">*</string>
+    <string name="div">/</string>
+    <string name="add">+</string>
+    <string name="result_text">Result Text</string>
+    <string name="value">This value for the text as string res</string>
+</resources>

@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity"
+    android:orientation="vertical"
+    android:gravity="center"
+    android:background="@color/Beige"
+    >
+
+    <TextView
+        android:id="@+id/title1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/title1"
+        android:textSize="30sp"
+        android:gravity="center"
+        android:background="@color/purple_200"
+        />
+
+    <TextView
+        android:id="@+id/title2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/calculator_app"
+        android:gravity="center"
+        android:textSize="30sp"
+        android:background="@color/Pink"
+        />
+
+    <EditText
+        android:gravity="center"
+        android:id="@+id/firstnum"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:autofillHints="Enter First Number"
+        android:hint="@string/enter_first_number"
+        android:inputType="number"
+        android:minHeight="48dp" />
+
+    <EditText
+        android:gravity="center"
+        android:id="@+id/secondnum"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:hint="@string/enter_second_number"
+        android:importantForAutofill="no"
+        android:inputType="number"
+        android:minHeight="48dp" />
+
+    <LinearLayout
+        android:layout_marginTop="50dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+    <Button
+        android:id="@+id/addbut"
+        android:text="@string/add"
+        android:layout_marginEnd="10dp"
+        android:backgroundTint="@color/Honeydew"
+        android:textColor="@color/black"
+        android:textSize="20sp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        style="?android:attr/buttonBarButtonStyle"
+
+        />
+
+    <Button
+        android:id="@+id/subbut"
+        android:text="@string/sub"
+        android:layout_marginEnd="10dp"
+        android:backgroundTint="@color/Honeydew"
+        android:textSize="20sp"
+        android:textColor="@color/black"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        style="?android:attr/buttonBarButtonStyle" />
+
+    <Button
+        android:id="@+id/timesbut"
+        android:text="@string/multi"
+        android:layout_marginEnd="10dp"
+        android:backgroundTint="@color/Honeydew"
+        android:textColor="@color/black"
+        android:textSize="20sp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        style="?android:attr/buttonBarButtonStyle" />
+    <Button
+        android:id="@+id/divbut"
+        android:text="@string/div"
+        android:textSize="20sp"
+        android:backgroundTint="@color/Honeydew"
+        android:textColor="@color/black"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        style="?android:attr/buttonBarButtonStyle" />
+
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/resulttext"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginTop="40dp"
+        android:gravity="center"
+        android:hint="@string/result_text"
+        android:textSize="40sp" />
+
+</LinearLayout>
