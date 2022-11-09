@@ -130,6 +130,11 @@ public class MainActivity extends AppCompatActivity {
         super.onDestroy();
     }
 
+
+    private void calculate(){
+
+
+    }
 //    public void add_clicked(View view) {
 //    }
 }
