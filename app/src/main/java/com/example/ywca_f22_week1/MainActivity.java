@@ -12,96 +12,75 @@ import android.widget.Toast;
 
 import org.w3c.dom.Text;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity
+    implements View.OnClickListener
+{
+// MVC: M = model, V= layout, C= Activity.
+    CalculatorClass calculatorClass;
+    EditText firstNumberText;
+    EditText secondNumberText ;
+    Button add_but ;
+    Button sub_but;
+    Button times_but ;
+    Button div_but;
+    Button clear;
+    TextView result_text ;
+    Button history;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_main_relative);
         //R.java is auto generated file, has all res ids (int)
         Log.d("Calculator App" , "Activity Created");
+        calculatorClass = new CalculatorClass();
 
-        EditText firstNumberText = (EditText)findViewById(R.id.firstnum);
-        EditText secondNumberText = (EditText)findViewById(R.id.secondnum);
-
-        Button add_but = findViewById(R.id.addbut);
-        Button sub_but = findViewById(R.id.subbut);
-        Button times_but = findViewById(R.id.timesbut);
-        Button div_but = findViewById(R.id.divbut);
-        TextView result_text = findViewById(R.id.resulttext);
-
-        add_but.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-
-                Log.d("Calculator App" , "Add button clicked");
-                if (!firstNumberText.getText().toString().isEmpty() &&
-                        !secondNumberText.getText().toString().isEmpty()) {
-                    int fn = Integer.parseInt(firstNumberText.getText().toString());
-                    int sn = Integer.parseInt(secondNumberText.getText().toString());
-                    int result = fn + sn;
-                    firstNumberText.setText("");
-                    secondNumberText.setText("");
-                    result_text.setText(fn + " + " + sn + " = " + result + "");
-                }else {
-                    Toast.makeText(MainActivity.this,"You have to enter both numbers",Toast.LENGTH_LONG).show();
-                }
-            }
-        });
-
-        sub_but.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Log.d("Calculator App" , "Sub button clicked");
-                if (!firstNumberText.getText().toString().isEmpty() &&
-                        !secondNumberText.getText().toString().isEmpty()) {
-                    int fn = Integer.parseInt(firstNumberText.getText().toString());
-                    int sn = Integer.parseInt(secondNumberText.getText().toString());
-                    int result = fn - sn;
-                    firstNumberText.setText("");
-                    secondNumberText.setText("");
-                    result_text.setText(fn + " - " + sn + " = " + result + "");
-                }else {
-                    Toast.makeText(MainActivity.this,"You have to enter both numbers",Toast.LENGTH_LONG).show();
-                }
-            }
-        });
-
-        times_but.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Log.d("Calculator App" , "Times button clicked");
-                if (!firstNumberText.getText().toString().isEmpty() &&
-                        !secondNumberText.getText().toString().isEmpty()) {
-                    int fn = Integer.parseInt(firstNumberText.getText().toString());
-                    int sn = Integer.parseInt(secondNumberText.getText().toString());
-                    int result = fn * sn;
-                    result_text.setText(fn + " * " + sn + " = " + result + "");
-                    firstNumberText.setText("");
-                    secondNumberText.setText("");
-                }else {
-                    Toast.makeText(MainActivity.this,"You have to enter both numbers",Toast.LENGTH_LONG).show();
-                }
-            }
-        });
-
-        div_but.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Log.d("Calculator App" , "Div button clicked");
-                if (!firstNumberText.getText().toString().isEmpty() &&
-                        !secondNumberText.getText().toString().isEmpty()) {
-                    int fn = Integer.parseInt(firstNumberText.getText().toString());
-                    int sn = Integer.parseInt(secondNumberText.getText().toString());
-                    int result = fn / sn;
-                    result_text.setText(fn + " / " + sn + " = " + result + "");
-                    firstNumberText.setText("");
-                    secondNumberText.setText("");
-                }else {
-                    Toast.makeText(MainActivity.this,"You have to enter both numbers",Toast.LENGTH_LONG).show();
-                }
-            }
-        });
+         firstNumberText = (EditText)findViewById(R.id.firstnum);
+         secondNumberText = (EditText)findViewById(R.id.secondnum);
+         clear = findViewById(R.id.clear);
+         add_but = findViewById(R.id.addbut);
+         sub_but = findViewById(R.id.subbut);
+         times_but = findViewById(R.id.timesbut);
+         div_but = findViewById(R.id.divbut);
+         history = findViewById(R.id.showpreviousoperator);
+         result_text = findViewById(R.id.resulttext);
+         add_but.setOnClickListener(this);
+         sub_but.setOnClickListener(this);
+         times_but.setOnClickListener(this);
+         div_but.setOnClickListener(this);
+        history.setOnClickListener(this);
+        clear.setOnClickListener(this);
+         //        add_but.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//               String op =  ((Button)view).getText().toString();
+//               validate(op);
+//            }
+//        });
+//
+//        sub_but.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//                String op =  ((Button)view).getText().toString();
+//                validate(op);
+//            }
+//        });
+//
+//        times_but.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//                String op =  ((Button)view).getText().toString();
+//                validate(op);
+//            }
+//        });
+//
+//        div_but.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//                String op =  ((Button)view).getText().toString();
+//                validate(op);
+//            }
+//        });
     }
 
     @Override
@@ -131,10 +110,40 @@ public class MainActivity extends AppCompatActivity {
     }
 
 
-    private void calculate(){
+    private void validate(String op){
+        if (!firstNumberText.getText().toString().isEmpty() &&
+                !secondNumberText.getText().toString().isEmpty()) {
+            int fn = Integer.parseInt(firstNumberText.getText().toString());
+            int sn = Integer.parseInt(secondNumberText.getText().toString());
+            int result = calculatorClass.calculate(fn, sn, op);
+            result_text.setText(calculatorClass.history);
+
+        }else {
+            Toast.makeText(MainActivity.this,"You have to enter both numbers",Toast.LENGTH_LONG).show();
+        }
+
+    }
+
+    @Override
+    public void onClick(View view) {
+        switch (view.getId()){
+            case R.id.clear:
+                firstNumberText.setText("");
+                secondNumberText.setText("");
+                result_text.setText("");
+                break;
+            case R.id.showpreviousoperator:
+               if (!calculatorClass.history.isEmpty())
+                   result_text.setText(calculatorClass.history);
+               else
+                   result_text.setText("No previous operator");
+                break;
+            default:
+                String op =  ((Button)view).getText().toString();
+                validate(op);
+        };
+
 
 
     }
-//    public void add_clicked(View view) {
-//    }
 }
