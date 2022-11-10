@@ -7,6 +7,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -16,6 +17,8 @@ public class MainActivity extends AppCompatActivity
     implements View.OnClickListener
 {
 // MVC: M = model, V= layout, C= Activity.
+    /// MVVM = model, view, view model
+
     CalculatorClass calculatorClass;
     EditText firstNumberText;
     EditText secondNumberText ;
@@ -26,6 +29,7 @@ public class MainActivity extends AppCompatActivity
     Button clear;
     TextView result_text ;
     Button history;
+    RelativeLayout layout;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -33,6 +37,10 @@ public class MainActivity extends AppCompatActivity
         setContentView(R.layout.activity_main_relative);
         //R.java is auto generated file, has all res ids (int)
         Log.d("Calculator App" , "Activity Created");
+
+        layout = findViewById(R.id.rootlayout);
+        layout.setBackgroundColor(getResources().getColor(R.color.DeepPink));
+        // this line is not correct
         calculatorClass = new CalculatorClass();
 
          firstNumberText = (EditText)findViewById(R.id.firstnum);
@@ -133,6 +141,8 @@ public class MainActivity extends AppCompatActivity
                 result_text.setText("");
                 break;
             case R.id.showpreviousoperator:
+                layout.setBackgroundColor(getResources().getColor(R.color.white));
+
                if (!calculatorClass.history.isEmpty())
                    result_text.setText(calculatorClass.history);
                else
