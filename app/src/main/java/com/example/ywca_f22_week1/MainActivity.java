@@ -34,12 +34,12 @@ public class MainActivity extends AppCompatActivity
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main_relative);
+        setContentView(R.layout.activity_main_constraints);
         //R.java is auto generated file, has all res ids (int)
         Log.d("Calculator App" , "Activity Created");
 
-        layout = findViewById(R.id.rootlayout);
-        layout.setBackgroundColor(getResources().getColor(R.color.DeepPink));
+       // layout = findViewById(R.id.rootlayout);
+        //layout.setBackgroundColor(getResources().getColor(R.color.DeepPink));
         // this line is not correct
         calculatorClass = new CalculatorClass();
 
@@ -141,7 +141,7 @@ public class MainActivity extends AppCompatActivity
                 result_text.setText("");
                 break;
             case R.id.showpreviousoperator:
-                layout.setBackgroundColor(getResources().getColor(R.color.white));
+              //  layout.setBackgroundColor(getResources().getColor(R.color.white));
 
                if (!calculatorClass.history.isEmpty())
                    result_text.setText(calculatorClass.history);
