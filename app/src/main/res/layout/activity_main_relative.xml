@@ -133,6 +133,7 @@
     </LinearLayout>
 
 
+
     <TextView
         android:id="@+id/resulttext"
         android:layout_width="wrap_content"
