@@ -14,63 +14,54 @@
         android:id="@+id/title1"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:background="@android:color/holo_green_dark"
+        android:gravity="center"
         android:text="@string/title1"
         android:textSize="30sp"
-        android:gravity="center"
-        android:background="@color/purple_200"
+        android:layout_marginBottom="10dp"
         />
+
 
     <TextView
         android:id="@+id/title2"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:background="@android:color/holo_green_light"
+        android:gravity="center"
         android:text="@string/calculator_app"
-        android:gravity="center"
-        android:textSize="30sp"
-        android:background="@color/Pink"
-        />
+        android:layout_marginBottom="30dp"
+        android:textSize="30sp" />
 
-    <EditText
+    <TextView
+        android:id="@+id/resulttext"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="50dp"
         android:gravity="center"
-        android:id="@+id/firstnum"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:autofillHints="Enter First Number"
-        android:hint="@string/enter_first_number"
-        android:inputType="number"
-        android:minHeight="48dp" />
-
-    <EditText
-        android:gravity="center"
-        android:id="@+id/secondnum"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:hint="@string/enter_second_number"
-        android:importantForAutofill="no"
-        android:inputType="number"
-        android:minHeight="48dp" />
+        android:hint="@string/result_text"
+        android:textSize="40sp" />
 
     <LinearLayout
-        android:layout_marginTop="50dp"
+        android:layout_marginTop="10dp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content">
     <Button
-        android:id="@+id/addbut"
-        android:text="@string/add"
-        android:layout_marginEnd="10dp"
+        android:id="@+id/one"
+        android:text="@string/one"
+        android:layout_marginEnd="3dp"
         android:backgroundTint="@color/Honeydew"
         android:textColor="@color/black"
         android:textSize="20sp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         style="?android:attr/buttonBarButtonStyle"
-
         />
 
     <Button
-        android:id="@+id/subbut"
-        android:text="@string/sub"
-        android:layout_marginEnd="10dp"
+        android:id="@+id/two"
+        android:text="@string/two"
+        android:layout_marginEnd="3dp"
         android:backgroundTint="@color/Honeydew"
         android:textSize="20sp"
         android:textColor="@color/black"
@@ -79,9 +70,9 @@
         style="?android:attr/buttonBarButtonStyle" />
 
     <Button
-        android:id="@+id/timesbut"
-        android:text="@string/multi"
-        android:layout_marginEnd="10dp"
+        android:id="@+id/three"
+        android:text="@string/three"
+        android:layout_marginEnd="3dp"
         android:backgroundTint="@color/Honeydew"
         android:textColor="@color/black"
         android:textSize="20sp"
@@ -89,8 +80,8 @@
         android:layout_height="wrap_content"
         style="?android:attr/buttonBarButtonStyle" />
     <Button
-        android:id="@+id/divbut"
-        android:text="@string/div"
+        android:id="@+id/add_but"
+        android:text="@string/add"
         android:textSize="20sp"
         android:backgroundTint="@color/Honeydew"
         android:textColor="@color/black"
@@ -100,13 +91,165 @@
 
     </LinearLayout>
 
-    <TextView
-        android:id="@+id/resulttext"
+    <LinearLayout
+        android:layout_marginTop="5dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+        <Button
+            android:id="@+id/four"
+            android:text="@string/four"
+            android:layout_marginEnd="3dp"
+            android:backgroundTint="@color/Honeydew"
+            android:textColor="@color/black"
+            android:textSize="20sp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            style="?android:attr/buttonBarButtonStyle"
+            />
+
+        <Button
+            android:id="@+id/five"
+            android:text="@string/five"
+            android:layout_marginEnd="3dp"
+            android:backgroundTint="@color/Honeydew"
+            android:textSize="20sp"
+            android:textColor="@color/black"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            style="?android:attr/buttonBarButtonStyle" />
+
+        <Button
+            android:id="@+id/six"
+            android:text="@string/six"
+            android:layout_marginEnd="3dp"
+            android:backgroundTint="@color/Honeydew"
+            android:textColor="@color/black"
+            android:textSize="20sp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            style="?android:attr/buttonBarButtonStyle" />
+        <Button
+            android:id="@+id/sub_but"
+            android:text="@string/sub"
+            android:textSize="20sp"
+            android:backgroundTint="@color/Honeydew"
+            android:textColor="@color/black"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            style="?android:attr/buttonBarButtonStyle" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_marginTop="5dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+        <Button
+            android:id="@+id/seven"
+            android:text="@string/seven"
+            android:layout_marginEnd="3dp"
+            android:backgroundTint="@color/Honeydew"
+            android:textColor="@color/black"
+            android:textSize="20sp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            style="?android:attr/buttonBarButtonStyle"
+            />
+
+        <Button
+            android:id="@+id/eight"
+            android:text="@string/eight"
+            android:layout_marginEnd="3dp"
+            android:backgroundTint="@color/Honeydew"
+            android:textSize="20sp"
+            android:textColor="@color/black"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            style="?android:attr/buttonBarButtonStyle" />
+
+        <Button
+            android:id="@+id/nine"
+            android:text="@string/nine"
+            android:layout_marginEnd="3dp"
+            android:backgroundTint="@color/Honeydew"
+            android:textColor="@color/black"
+            android:textSize="20sp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            style="?android:attr/buttonBarButtonStyle" />
+        <Button
+            android:id="@+id/multiply"
+            android:text="@string/multi"
+            android:textSize="20sp"
+            android:backgroundTint="@color/Honeydew"
+            android:textColor="@color/black"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            style="?android:attr/buttonBarButtonStyle" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_marginTop="5dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+        <Button
+            android:id="@+id/clear_but"
+            android:text="@string/clear"
+            android:layout_marginEnd="3dp"
+            android:backgroundTint="@color/Honeydew"
+            android:textColor="@color/black"
+            android:textSize="20sp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            style="?android:attr/buttonBarButtonStyle"
+            />
+
+        <Button
+            android:id="@+id/zero"
+            android:text="@string/zero"
+            android:layout_marginEnd="3dp"
+            android:backgroundTint="@color/Honeydew"
+            android:textSize="20sp"
+            android:textColor="@color/black"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            style="?android:attr/buttonBarButtonStyle" />
+
+        <Button
+            android:id="@+id/equals"
+            android:text="@string/equals"
+            android:layout_marginEnd="3dp"
+            android:backgroundTint="@color/Honeydew"
+            android:textColor="@color/black"
+            android:textSize="20sp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            style="?android:attr/buttonBarButtonStyle" />
+        <Button
+            android:id="@+id/divide"
+            android:text="@string/div"
+            android:textSize="20sp"
+            android:backgroundTint="@color/Honeydew"
+            android:textColor="@color/black"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            style="?android:attr/buttonBarButtonStyle" />
+
+    </LinearLayout>
+
+<Button android:id="@+id/toStandardButton"
+     android:layout_height="wrap_content"
+    android:layout_width="wrap_content"
+    android:textColor="@color/teal_700"
+    android:text="Standard - No History"
+    android:layout_margin="5dp"
+    android:backgroundTint="@color/Yellow"
+    />
+
+    <TextView android:id="@+id/showHistoryText"
         android:layout_width="match_parent"
-        android:layout_height="50dp"
-        android:layout_marginTop="40dp"
-        android:gravity="center"
-        android:hint="@string/result_text"
-        android:textSize="40sp" />
+        android:layout_height="match_parent"
+        />
 
 </LinearLayout>
