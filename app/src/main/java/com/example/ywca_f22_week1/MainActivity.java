@@ -38,8 +38,7 @@ public class MainActivity extends AppCompatActivity
         //R.java is auto generated file, has all res ids (int)
         Log.d("Calculator App" , "Activity Created");
 
-       // layout = findViewById(R.id.rootlayout);
-        //layout.setBackgroundColor(getResources().getColor(R.color.DeepPink));
+
         // this line is not correct
         calculatorClass = new CalculatorClass();
 
