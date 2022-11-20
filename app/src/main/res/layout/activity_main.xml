@@ -17,8 +17,8 @@
         android:background="@android:color/holo_green_dark"
         android:gravity="center"
         android:text="@string/title1"
-        android:textSize="20sp"
-        android:layout_marginBottom="5dp"
+        android:textSize="30sp"
+        android:layout_marginBottom="10dp"
         />
 
 
@@ -29,21 +29,21 @@
         android:background="@android:color/holo_green_light"
         android:gravity="center"
         android:text="@string/calculator_app"
-        android:layout_marginBottom="10dp"
-        android:textSize="20sp" />
+        android:layout_marginBottom="30dp"
+        android:textSize="30sp" />
 
     <TextView
         android:id="@+id/resulttext"
         android:layout_width="match_parent"
-        android:layout_height="30dp"
-        android:layout_marginTop="5dp"
-        android:layout_marginBottom="20dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="50dp"
         android:gravity="center"
         android:hint="@string/result_text"
-        android:textSize="20sp" />
+        android:textSize="40sp" />
 
     <LinearLayout
-        android:layout_marginTop="0dp"
+        android:layout_marginTop="10dp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content">
     <Button
@@ -92,7 +92,7 @@
     </LinearLayout>
 
     <LinearLayout
-        android:layout_marginTop="0dp"
+        android:layout_marginTop="5dp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content">
         <Button
@@ -141,7 +141,7 @@
     </LinearLayout>
 
     <LinearLayout
-        android:layout_marginTop="0dp"
+        android:layout_marginTop="5dp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content">
         <Button
@@ -178,7 +178,7 @@
             android:layout_height="wrap_content"
             style="?android:attr/buttonBarButtonStyle" />
         <Button
-            android:id="@+id/multiply"
+            android:id="@+id/multiply_but"
             android:text="@string/multi"
             android:textSize="20sp"
             android:backgroundTint="@color/Honeydew"
@@ -190,7 +190,7 @@
     </LinearLayout>
 
     <LinearLayout
-        android:layout_marginTop="0dp"
+        android:layout_marginTop="5dp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content">
         <Button
@@ -226,8 +226,9 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             style="?android:attr/buttonBarButtonStyle" />
+
         <Button
-            android:id="@+id/divide"
+            android:id="@+id/div_but"
             android:text="@string/div"
             android:textSize="20sp"
             android:backgroundTint="@color/Honeydew"
@@ -238,18 +239,19 @@
 
     </LinearLayout>
 
-<Button android:id="@+id/toStandardButton"
+<Button android:id="@+id/toAdvancedButton"
      android:layout_height="wrap_content"
     android:layout_width="wrap_content"
     android:textColor="@color/teal_700"
+    android:gravity="center"
     android:text="Standard - No History"
-    android:layout_margin="0dp"
+    android:layout_margin="5dp"
     android:backgroundTint="@color/Yellow"
     />
 
-    <TextView android:id="@+id/showHistoryText"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        />
+<!--    <TextView android:id="@+id/showHistoryText"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="match_parent"-->
+<!--        />-->
 
 </LinearLayout>
