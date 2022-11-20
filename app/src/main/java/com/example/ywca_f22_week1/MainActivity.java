@@ -107,7 +107,36 @@ public class MainActivity extends AppCompatActivity
                 CalculatorClass.historyArrayList.clear();// clear the historyArrayList of strings
                 break;
             case R.id.toAdvancedButton:
-                Intent firstIntent = new Intent(MainActivity.this, AdvancedVersion.this)
+                Intent firstIntent = new Intent(MainActivity.this, AdvancedVersion.class);
+                startActivity(firstIntent); //goes into AdvanceVersion
+                break;
+            default: //all other buttons for calculation (without clear button and advnacebutton
+                //get user input and validate it
+                symbol = ((Button) view).getText().toString();
+                if (CalculatorClass.isNumber(symbol)) {
+                    CalculatorClass.push(symbol);
+                    result_text.setText(CalculatorClass.history);
+                } else{
+                    if (CalculatorClass.history.isEmpty()){
+                        Toast.makeText(MainActivity.this, "First input has to be a number", Toast.LENGTH_SHORT).show();
+                    } else{
+                    String previousSymbol = String.valueOf(calculatorClass.history.charAt(CalculatorClass.history.length()-1));
+                    if (CalculatorClass.isOperator(previousSymbol)) {
+                       Toast.makeText(MainActivity.this, "You cannot use two operators in a row, enter a number", Toast.LENGTH_SHORT).show();
+                    } else {
+                       CalculatorClass.push(symbol);
+                       if (symbol.equals("=")){
+                           if (CalculatorClass.historyArrayList.size() < 3){
+                                Toast.makeText(MainActivity.this, "This cannot be calculated, please enter proper values and operators to calculate.", Toast.LENGTH_SHORT).show();
+                                CalculatorClass.historyArrayList.clear();
+                                calculatorClass.history = CalculatorClass.history.substring(0, CalculatorClass.history.length()-1 );
+                           } else {
+
+                           }
+                       }
+                    }
+                    }
+                }
 
                 if (!calculatorClass.history.isEmpty())
                     result_text.setText(calculatorClass.history);
