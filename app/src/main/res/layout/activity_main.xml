@@ -244,14 +244,19 @@
     android:layout_width="wrap_content"
     android:textColor="@color/teal_700"
     android:gravity="center"
-    android:text="Standard - No History"
+    android:text="Advanced - WITH History"
     android:layout_margin="5dp"
     android:backgroundTint="@color/Yellow"
     />
 
-<!--    <TextView android:id="@+id/showHistoryText"-->
-<!--        android:layout_width="match_parent"-->
-<!--        android:layout_height="match_parent"-->
-<!--        />-->
+    <TextView
+        android:id="@+id/history_tv"
+        android:layout_width="match_parent"
+        android:layout_height="150dp"
+        android:layout_marginTop="10dp"
+        android:gravity="center"
+        android:visibility="invisible"
+        android:lines="10"
+        android:textSize="30sp" />
 
 </LinearLayout>
